@@ -1,0 +1,38 @@
+{% extends 'portal/base.html' %}
+
+{% block header %}
+	<h2>{{ area }} Networks</h2>
+{% endblock header %}
+
+{% block content %}
+
+	<ul>
+		{% for network in networks %}
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3>
+						<!-- {{ network.date_added|date:'M d, Y H:i' }} -->
+						{% now "M d, Y H:i" %}
+					</h3>
+				</div>
+				<div class="panel-body">
+					<span style="float:left;">
+						{{ network.text|linebreaks }}
+					</span>
+					{% if network.status == 'green' %}
+						<span style="float:right; color: #68FF33">
+							Operational
+						</span>
+					{% else %}
+						<span style="float:right; color: red">
+							Down
+						</span>
+					{%  endif %}
+				</div>
+			</div> <!-- panel -->
+		{% empty %}
+			You don't have any networks in this Area yet.
+		{% endfor %}
+	</ul>
+
+{% endblock content %}

@@ -1,0 +1,1 @@
+web: gunicorn customerportal.wsgi --log-file -

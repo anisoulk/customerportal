@@ -1,0 +1,9 @@
+.navbar-brand {
+  padding: 0px;
+  height: 180px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: auto;
+}

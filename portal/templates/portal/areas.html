@@ -1,0 +1,20 @@
+{% extends 'portal/base.html' %}
+
+{% block header %}
+	<h1>Network Location</h1>
+{% endblock header %}
+
+{% block content %}
+<ul>
+	{% for area in areas %}
+		<li>
+			<h3>
+				<a href="{% url 'portal:area' area.id %}">{{ area }}</a>
+			</h3>
+		</li>
+	{% empty %}
+		<li>No Networks have been added yet!</li>
+	{% endfor %}
+</ul>
+
+{% endblock content %}
